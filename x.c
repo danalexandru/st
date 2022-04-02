@@ -1520,6 +1520,7 @@ void
 xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og)
 {
 	Color drawcol;
+    XRenderColor colbg;
 
 	/* remove the old cursor */
 	if (selected(ox, oy))
@@ -1546,14 +1547,30 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og)
 		}
 	} else {
 		if (selected(cx, cy)) {
+            /** this is the main part of the dynamic cursor color patch */
+            g.bg = g.fg;
 			g.fg = defaultfg;
-			g.bg = defaultrcs;
 		} else {
 			g.fg = defaultbg;
 			g.bg = defaultcs;
 		}
+	}
+
+	/**
+	 * and this is the second part of the dynamic cursor color patch.
+	 * it handles the `drawcol` variable
+	*/
+	if (IS_TRUECOL(g.bg)) {
+		colbg.alpha = 0xffff;
+		colbg.red = TRUERED(g.bg);
+		colbg.green = TRUEGREEN(g.bg);
+		colbg.blue = TRUEBLUE(g.bg);
+		XftColorAllocValue(xw.dpy, xw.vis, xw.cmap, &colbg, &drawcol);
+	} else {
 		drawcol = dc.col[g.bg];
 	}
+ 
+ 	/* draw the new one */
 
 	/* draw the new one */
 	if (IS_SET(MODE_FOCUSED)) {
@@ -2027,6 +2044,8 @@ usage(void)
 int
 main(int argc, char *argv[])
 {
+  int i;
+  char *colval;
 	xw.l = xw.t = 0;
 	xw.isfixed = False;
 	xsetcursor(cursorshape);
@@ -2071,6 +2090,11 @@ main(int argc, char *argv[])
 	case 'v':
 		die("%s " VERSION "\n", argv0);
 		break;
+  case 'C':
+    colval = strtok(EARGF(usage()), "@");
+    i = atoi(strtok(NULL, "@"));
+    colorname[i] = colval;
+    break;
 	default:
 		usage();
 	} ARGEND;
