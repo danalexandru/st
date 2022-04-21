@@ -6,7 +6,10 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Ubuntu Mono:pixelsize=15:stype=Bold:antialias=true:autohint=true";
-static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static char *font2[] = {
+    "Hack Nerd Font:pixelsize=15:antialias=true:autohint=true",
+    "JoyPixels:pixelsize=15:antialias=true:autohint=true"
+};
 static int borderpx = 2;
 
 /*
