@@ -102,8 +102,8 @@ unsigned int tabspaces = 8;
 float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
-#define COLORSCHEME_AYU         0
-#define COLORSCHEME_DOOM_ONE    1
+#define COLORSCHEME_AYU         1
+#define COLORSCHEME_DOOM_ONE    0
 
 static const char *colorname[] = {
 #if COLORSCHEME_AYU 
@@ -138,7 +138,7 @@ static const char *colorname[] = {
 
 #endif
 
-#ifdef COLORSCHEME_DOOM_ONE
+#if COLORSCHEME_DOOM_ONE
 	/* 8 bright colors */
     "#282c34", //black 
     "#ff6c6b", //red
@@ -165,7 +165,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-#ifdef COLORSCHEME_DOOM_ONE
+#if COLORSCHEME_DOOM_ONE
 	"gray90", /* default foreground colour */
 	"#282c34", /* default background colour */
 #else
