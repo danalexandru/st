@@ -108,6 +108,9 @@ unsigned int tabspaces = 8;
 float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
+#define COLORSCHEME_AYU         0
+#define COLORSCHEME_DOOM_ONE    1
+
 static const char *colorname[] = {
 	/* 8 normal colors */
 	CurrentColorScheme.Normal.Black,
