@@ -8,7 +8,8 @@
 static char *font = "Ubuntu Mono:pixelsize=15:stype=Bold:antialias=true:autohint=true";
 static char *font2[] = {
     "Hack Nerd Font:pixelsize=15:antialias=true:autohint=true",
-    "JoyPixels:pixelsize=15:antialias=true:autohint=true"
+    "JoyPixels:pixelsize=15:antialias=true:autohint=true",
+    "EmojiOne:pixelsize=16:antialias=true:autohint=true",
 };
 static int borderpx = 2;
 
@@ -101,7 +102,11 @@ unsigned int tabspaces = 8;
 float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
+#define COLORSCHEME_AYU         0
+#define COLORSCHEME_DOOM_ONE    1
+
 static const char *colorname[] = {
+#if COLORSCHEME_AYU 
 	/* 8 normal colors */
 	"#0A0B11", //"black",
 	"#FF0000", //"#FF3333", //"red3",
@@ -111,7 +116,39 @@ static const char *colorname[] = {
 	"#FF00FF", //"magenta3",
 	"#00FFFF", //"#5CCFE6", //"cyan3",
 	"#3E4B59", //"gray90",
+#elif COLORSCHEME_DOOM_ONE
+    "#282c34", //black 
+    "#ff6c6b", //red
+    "#98be65", //green
+    "#ECBE7B", //yellow
+    "#51afef", //blue
+    "#c678dd", //magenta
+    "#46D9FF", //cyan
+    "#efefef", //white
 
+#else
+    "black",
+    "#FF3333", //"red3",
+    "#86B300", //"green3",
+    "yellow3",
+    "blue2",
+    "magenta3",
+    "#5CCFE6", //"cyan3",
+    "gray90",
+
+#endif
+
+#ifdef COLORSCHEME_DOOM_ONE
+	/* 8 bright colors */
+    "#282c34", //black 
+    "#ff6c6b", //red
+    "#98be65", //green
+    "#ECBE7B", //yellow
+    "#51afef", //blue
+    "#c678dd", //magenta
+    "#46D9FF", //cyan
+    "#efefef", //white
+#else
 	/* 8 bright colors */
 	"gray50",
 	"red",
@@ -121,14 +158,20 @@ static const char *colorname[] = {
 	"magenta",
 	"cyan",
 	"white",
+#endif
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
+#ifdef COLORSCHEME_DOOM_ONE
+	"gray90", /* default foreground colour */
+	"#282c34", /* default background colour */
+#else
 	"gray90", /* default foreground colour */
 	"#0A0B11", /* default background colour */
+#endif
 };
 
 
@@ -138,8 +181,16 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 258;
 unsigned int defaultbg = 259;
+#if COLORSCHEME_AYU //yellow
 unsigned int defaultcs = 220;
 static unsigned int defaultrcs = 220;
+#elif COLORSCHEME_DOOM_ONE //blue
+unsigned int defaultcs = 33;
+static unsigned int defaultrcs = 33;
+#else //white
+unsigned int defaultcs = 256;
+static unsigned int defaultrcs = 256;
+#endif
 
 /*
  * Default shape of cursor
