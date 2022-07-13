@@ -99,11 +99,11 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
-#define COLORSCHEME_AYU         1
-#define COLORSCHEME_DOOM_ONE    0
+#define COLORSCHEME_AYU         0
+#define COLORSCHEME_DOOM_ONE    1
 
 static const char *colorname[] = {
 #if COLORSCHEME_AYU 
@@ -117,14 +117,14 @@ static const char *colorname[] = {
 	"#00FFFF", //"#5CCFE6", //"cyan3",
 	"#3E4B59", //"gray90",
 #elif COLORSCHEME_DOOM_ONE
-    "#282c34", //black 
+    "#21242b", //black 
     "#ff6c6b", //red
     "#98be65", //green
     "#ECBE7B", //yellow
     "#51afef", //blue
     "#c678dd", //magenta
     "#46D9FF", //cyan
-    "#efefef", //white
+    "#bbc2cf", //white
 
 #else
     "black",
@@ -140,14 +140,14 @@ static const char *colorname[] = {
 
 #if COLORSCHEME_DOOM_ONE
 	/* 8 bright colors */
-    "#282c34", //black 
+    "gray50", //black 
     "#ff6c6b", //red
     "#98be65", //green
     "#ECBE7B", //yellow
     "#51afef", //blue
     "#c678dd", //magenta
     "#46D9FF", //cyan
-    "#efefef", //white
+    "#bbc2cf", //white
 #else
 	/* 8 bright colors */
 	"gray50",
@@ -166,8 +166,8 @@ static const char *colorname[] = {
 	"#cccccc",
 	"#555555",
 #if COLORSCHEME_DOOM_ONE
-	"gray90", /* default foreground colour */
-	"#282c34", /* default background colour */
+	"#bbc2cf", /* default foreground colour */
+	"#21242b", /* default background colour */
 #else
 	"gray90", /* default foreground colour */
 	"#0A0B11", /* default background colour */
@@ -263,6 +263,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = 2} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = 2} },
+	{ XK_NO_MOD,            XK_F11,         fullscreen,     {.i =  0} },
+	{ MODKEY,               XK_Return,      fullscreen,     {.i =  0} },
 };
 
 /*
