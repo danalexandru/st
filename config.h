@@ -5,8 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Ubuntu Mono:pixelsize=15:stype=Bold:antialias=true:autohint=true";
+/* static char *font = "Ubuntu Mono:pixelsize=15:stype=Bold:antialias=true:autohint=true"; */
+static char *font = "Monaco:pixelsize=12:stype=Bold:antialias=true:autohint=true";
 static char *font2[] = {
+    "Ubuntu Mono:pixelsize=15:stype=Bold:antialias=true:autohint=true",
     "Hack Nerd Font:pixelsize=15:antialias=true:autohint=true",
     "JoyPixels:pixelsize=15:antialias=true:autohint=true",
     "EmojiOne:pixelsize=16:antialias=true:autohint=true",
@@ -202,11 +204,24 @@ static unsigned int defaultrcs = 256;
 static unsigned int cursorshape = 2;
 
 /*
+ * Whether to use pixel geometry or cell geometry
+ */
+
+static Geometry geometry = CellGeometry;
+
+/*
  * Default columns and rows numbers
  */
 
 static unsigned int cols = 80;
 static unsigned int rows = 24;
+
+/*
+ * Default width and height (including borders!)
+ */
+
+static unsigned int width = 800;
+static unsigned int height = 600;
 
 /*
  * Default colour and shape of the mouse cursor
