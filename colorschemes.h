@@ -208,10 +208,72 @@ const ColorScheme MatchaDark= {
 /* }; */
 
 
+const ColorScheme Dracula = {
+    .Primary = {
+        .Background = "#282a36",
+        .Foreground = "#f8f8f2",
+    },
+    .Cursor = {
+        .Text = "#000000",
+        .Background = 170,
+        .ReversedBackground = 170,
+    },
+    .Normal = {
+        .Black = "#000000",
+        .Red = "#ff5555",
+        .Green = "#50fa7b",
+        .Yellow = "#f1fa8c",
+        .Blue = "#bd93f9",
+        .Magenta = "#ff79c6",
+        .Cyan = "#8be9fd",
+        .White = "#bbbbbb"
+    },
+    .Bright = {
+        .Black = "#44475a",
+        .Red = "#ff5555",
+        .Green = "#50fa7b",
+        .Yellow = "#f1fa8c",
+        .Blue = "#bd93f9",
+        .Magenta = "#ff79c6",
+        .Cyan = "#8be9fd",
+        .White = "#ffffff"
+    }
+};
+
+const ColorScheme VSCode = {
+    .Primary = {
+        .Background = "#1e1e1e",
+        .Foreground = "#e5e5e5",
+    },
+    .Cursor = {
+        .Text = "#000000",
+        .Background = 36,
+        .ReversedBackground = 36,
+    },
+    .Normal = {
+        .Black = "#000000",
+        .Red = "#cd3131",
+        .Green = "#0dbc79",
+        .Yellow = "#e5e510",
+        .Blue = "#2472c8",
+        .Magenta = "#bc3fbc",
+        .Cyan = "#11a8cd",
+        .White = "#e5e5e5"
+    },
+    .Bright = {
+        .Black = "#666666",
+        .Red = "#f14c4c",
+        .Green = "#23d18b",
+        .Yellow = "#f5f543",
+        .Blue = "#3b8eea",
+        .Magenta = "#d670d6",
+        .Cyan = "#29b8db",
+        .White = "#e5e5e5"
+    }
+};
 /************************************/
 /**      CURRENT COLORSCHEME        */
 /************************************/
-const ColorScheme CurrentColorScheme = DoomOne;
+const ColorScheme CurrentColorScheme = Gruvbox;
 
 // Cursor colors: https://www.ditig.com/256-colors-cheat-sheet
-
