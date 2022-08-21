@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-#include "colorschemes.h"
 
 /*
  * appearance
@@ -105,34 +104,76 @@ unsigned int tabspaces = 8;
 float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-	/* 8 normal colors */
-	CurrentColorScheme.Normal.Black,
-	CurrentColorScheme.Normal.Red,
-	CurrentColorScheme.Normal.Green,
-	CurrentColorScheme.Normal.Yellow,
-	CurrentColorScheme.Normal.Blue,
-	CurrentColorScheme.Normal.Magenta,
-	CurrentColorScheme.Normal.Cyan,
-	CurrentColorScheme.Normal.White,
+#define COLORSCHEME_AYU         0
+#define COLORSCHEME_DOOM_ONE    1
 
+static const char *colorname[] = {
+#if COLORSCHEME_AYU 
+	/* 8 normal colors */
+	"#0A0B11", //"black",
+	"#FF0000", //"#FF3333", //"red3",
+	"#00FF00", //"#86B300", //"green3",
+	"#FFFF00", //"yellow3",
+	"#36A3D9", //"blue2",
+	"#FF00FF", //"magenta3",
+	"#00FFFF", //"#5CCFE6", //"cyan3",
+	"#3E4B59", //"gray90",
+#elif COLORSCHEME_DOOM_ONE
+    "#21242b", //black 
+    "#ff6c6b", //red
+    "#98be65", //green
+    "#ECBE7B", //yellow
+    "#51afef", //blue
+    "#c678dd", //magenta
+    "#46D9FF", //cyan
+    "#bbc2cf", //white
+
+#else
+    "black",
+    "#FF3333", //"red3",
+    "#86B300", //"green3",
+    "yellow3",
+    "blue2",
+    "magenta3",
+    "#5CCFE6", //"cyan3",
+    "gray90",
+
+#endif
+
+#if COLORSCHEME_DOOM_ONE
 	/* 8 bright colors */
-	CurrentColorScheme.Bright.Black,
-	CurrentColorScheme.Bright.Red,
-	CurrentColorScheme.Bright.Green,
-	CurrentColorScheme.Bright.Yellow,
-	CurrentColorScheme.Bright.Blue,
-	CurrentColorScheme.Bright.Magenta,
-	CurrentColorScheme.Bright.Cyan,
-	CurrentColorScheme.Bright.White,
+    "gray50", //black 
+    "#ff6c6b", //red
+    "#98be65", //green
+    "#ECBE7B", //yellow
+    "#51afef", //blue
+    "#c678dd", //magenta
+    "#46D9FF", //cyan
+    "#bbc2cf", //white
+#else
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
+#endif
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	CurrentColorScheme.Primary.Foreground, /* default foreground colour */
-	CurrentColorScheme.Primary.Background, /* default background colour */
+#if COLORSCHEME_DOOM_ONE
+	"#bbc2cf", /* default foreground colour */
+	"#21242b", /* default background colour */
+#else
+	"gray90", /* default foreground colour */
+	"#0A0B11", /* default background colour */
+#endif
 };
 
 
@@ -142,8 +183,16 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 258;
 unsigned int defaultbg = 259;
-unsigned int defaultcs = CurrentColorScheme.Cursor.Background;
-static unsigned int defaultrcs = CurrentColorScheme.Cursor.ReversedBackground;
+#if COLORSCHEME_AYU //yellow
+unsigned int defaultcs = 220;
+static unsigned int defaultrcs = 220;
+#elif COLORSCHEME_DOOM_ONE //blue
+unsigned int defaultcs = 33;
+static unsigned int defaultrcs = 33;
+#else //white
+unsigned int defaultcs = 256;
+static unsigned int defaultrcs = 256;
+#endif
 
 /*
  * Default shape of cursor
