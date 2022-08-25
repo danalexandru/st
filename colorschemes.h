@@ -100,6 +100,37 @@ const ColorScheme Ayu = {
     }
 };
 
+const ColorScheme Gruvbox = {
+    .Primary = {
+        .Background = "#282828",
+        .Foreground = "#a89984"
+    },
+    .Cursor = {
+        .Text = "#0A0B11",
+        .Background = 15,
+        .ReversedBackground = 257
+    },
+    .Normal = {
+        .Black = "#282828",
+        .Red = "#cc241d",
+        .Green = "#98971a",
+        .Yellow = "#d79921",
+        .Blue = "#458588",
+        .Magenta = "#b16286",
+        .Cyan = "#689d6a",
+        .White = "#a89984"
+    },
+    .Bright = {
+        .Black = "#928374",
+        .Red = "#fb4934",
+        .Green = "#b8bb26",
+        .Yellow = "#fabd2f",
+        .Blue = "#83a598",
+        .Magenta = "#d3869b",
+        .Cyan = "#8ec07c",
+        .White = "#ebdbb2"
+    }
+};
 /************************************/
 /**      CURRENT COLORSCHEME        */
 /************************************/
