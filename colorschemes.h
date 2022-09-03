@@ -131,8 +131,84 @@ const ColorScheme Gruvbox = {
         .White = "#ebdbb2"
     }
 };
+
+const ColorScheme MatchaDark= {
+    .Primary = {
+        .Background = "#222b2e",
+        .Foreground = "#bbc2cf"
+    },
+    .Cursor = {
+        .Text = "#000000",
+        .Background= 36,
+        .ReversedBackground = 36
+    },
+    .Normal = {
+        .Black = "#21242b",
+        .Red = "#ff5f5f",
+        /* .Green = "#98be65", */
+        /* .Green = "#57a775", */
+        .Green = "#78bb75",
+        .Yellow = "#ECBE7B",
+        .Blue = "#388ca1",
+        .Magenta = "#af5fd7",
+        .Cyan = "#00ffd7",
+        .White = "#bbc2cf"
+    },
+    .Bright = {
+        .Black = "gray50",
+        .Red = "#ff5f5f",
+        /* .Green = "#98be65", */
+        /* .Green = "#57a775", */
+        .Green = "#78bb75",
+        .Yellow = "#ECBE7B",
+        .Blue = "#388ca1",
+        .Magenta = "#af5fd7",
+        .Cyan = "#00ffd7",
+        .White = "#bbc2cf"
+    }
+};
+
+/* const ColorScheme MatchaDark = { */
+/*     .Primary = { */
+/*         .Background = "#222b2e", */
+/*         /1* .Foreground = "#00ffaf", *1/ */
+/*         /1* .Foreground = "#bbc2cf" *1/ */
+/*         .Foreground = "#16a085", */
+/*     }, */
+/*     .Cursor = { */
+/*         .Text = "#000000", */
+/*         .Background= 36, */
+/*         .ReversedBackground = 36 */
+/*     }, */
+/*     .Normal = { */
+/*         .Black = "#1b2224", */
+/*         .Red = "#ff5f5f", */
+/*         .Green = "#16a085", */
+/*         .Yellow = "#ECBE7B", */
+/*         /1* .Blue = "#00afaf", *1/ */
+/*         .Blue = "#51efdd", */
+/*         .Magenta = "#af5fd7", */
+/*         .Cyan = "#00ffd7", */
+/*         .White = "#F3F3F6" */
+/*     }, */
+/*     .Bright = { */
+/*         .Black = "gray50", */
+/*         .Red = "#ff5f5f", */
+/*         .Green = "#16a085", */
+/*         .Yellow = "#ECBE7B", */
+/*         /1* .Blue = "#00afaf", *1/ */
+/*         .Blue = "#51efdd", */
+/*         .Magenta = "#af5fd7", */
+/*         .Cyan = "#00ffd7", */
+/*         .White = "#F3F3F6" */
+/*     } */
+/* }; */
+
+
 /************************************/
 /**      CURRENT COLORSCHEME        */
 /************************************/
-const ColorScheme CurrentColorScheme = DoomOne;
+const ColorScheme CurrentColorScheme = MatchaDark;
+
+// Cursor colors: https://www.ditig.com/256-colors-cheat-sheet
 
