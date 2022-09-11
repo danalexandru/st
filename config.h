@@ -6,13 +6,12 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/* static char *font = "Ubuntu Mono:pixelsize=15:stype=Bold:antialias=true:autohint=true"; */
 static char *font = "Monaco:pixelsize=12:stype=Bold:antialias=true:autohint=true";
 static char *font2[] = {
-    "Ubuntu Mono:pixelsize=15:stype=Bold:antialias=true:autohint=true",
     "Hack Nerd Font:pixelsize=15:antialias=true:autohint=true",
-    "JoyPixels:pixelsize=15:antialias=true:autohint=true",
-    "EmojiOne:pixelsize=16:antialias=true:autohint=true",
+    /* "Symbola:pixelsize=15:antialias=true:autohint=true", // Unicode */
+    "JoyPixels:pixelsize=15:antialias=true:autohint=true", // Colored Emojis
+    "EmojiOne:pixelsize=16:antialias=true:autohint=true", // Colored Emojis
 };
 static int borderpx = 2;
 
