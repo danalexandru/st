@@ -103,12 +103,12 @@ const ColorScheme Ayu = {
 const ColorScheme Gruvbox = {
     .Primary = {
         .Background = "#282828",
-        .Foreground = "#a89984"
+        .Foreground = "#ebdbb2",
     },
     .Cursor = {
         .Text = "#0A0B11",
-        .Background = 15,
-        .ReversedBackground = 257
+        .Background = 214,
+        .ReversedBackground = 214,
     },
     .Normal = {
         .Black = "#282828",
@@ -208,7 +208,7 @@ const ColorScheme MatchaDark= {
 /************************************/
 /**      CURRENT COLORSCHEME        */
 /************************************/
-const ColorScheme CurrentColorScheme = MatchaDark;
+const ColorScheme CurrentColorScheme = Gruvbox;
 
 // Cursor colors: https://www.ditig.com/256-colors-cheat-sheet
 
