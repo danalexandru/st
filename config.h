@@ -36,6 +36,10 @@ char *vtiden = "\033[?6c";
 static float cwscale = 1.0;
 static float chscale = 1.0;
 
+/* Character rendering offsets in pixels */
+static short cxoffset = 1;
+static short cyoffset = 1;
+
 /*
  * word delimiter string
  *
