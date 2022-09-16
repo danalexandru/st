@@ -103,10 +103,13 @@ const ColorScheme Ayu = {
 const ColorScheme Gruvbox = {
     .Primary = {
         .Background = "#282828",
+        /* .Foreground = "#a89984" */
         .Foreground = "#ebdbb2",
     },
     .Cursor = {
         .Text = "#0A0B11",
+        /* .Background = 172, */
+        /* .ReversedBackground = 172, */
         .Background = 214,
         .ReversedBackground = 214,
     },
