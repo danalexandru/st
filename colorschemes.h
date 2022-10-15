@@ -274,6 +274,6 @@ const ColorScheme VSCode = {
 /************************************/
 /**      CURRENT COLORSCHEME        */
 /************************************/
-const ColorScheme CurrentColorScheme = Gruvbox;
+const ColorScheme CurrentColorScheme = DoomOne;
 
 // Cursor colors: https://www.ditig.com/256-colors-cheat-sheet

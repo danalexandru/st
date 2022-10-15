@@ -39,6 +39,7 @@ static float chscale = 1.0;
 /* Character rendering offsets in pixels */
 static short cxoffset = 0;
 static short cyoffset = 0;
+
 /*
  * word delimiter string
  *
