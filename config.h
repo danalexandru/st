@@ -10,8 +10,8 @@ static char *font = "Monaco:pixelsize=12:stype=Bold:antialias=true:autohint=true
 static char *font2[] = {
     "Hack Nerd Font:pixelsize=15:antialias=true:autohint=true",
     /* "Symbola:pixelsize=15:antialias=true:autohint=true", // Unicode */
-    "JoyPixels:pixelsize=15:antialias=true:autohint=true", // Colored Emojis
-    "EmojiOne:pixelsize=16:antialias=true:autohint=true", // Colored Emojis
+    "JoyPixels:pixelsize=14:antialias=true:autohint=true", // Colored Emojis
+    "EmojiOne:pixelsize=14:antialias=true:autohint=true", // Colored Emojis
 };
 static int borderpx = 2;
 
@@ -37,8 +37,8 @@ static float cwscale = 1.0;
 static float chscale = 1.0;
 
 /* Character rendering offsets in pixels */
-static short cxoffset = 1;
-static short cyoffset = 1;
+static short cxoffset = 0;
+static short cyoffset = 0;
 
 /*
  * word delimiter string
