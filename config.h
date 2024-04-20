@@ -6,7 +6,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Monaco:pixelsize=12:stype=Bold:antialias=true:autohint=true";
+/* static char *font = "Monaco:pixelsize=12:stype=Bold:antialias=true:autohint=true"; */
+static char *font = "Monego:pixelsize=12:stype=Bold:antialias=true:autohint=true";
 static char *font2[] = {
     "Hack Nerd Font:pixelsize=15:antialias=true:autohint=true",
     /* "Symbola:pixelsize=15:antialias=true:autohint=true", // Unicode */
@@ -137,7 +138,6 @@ static const char *colorname[] = {
 	CurrentColorScheme.Primary.Foreground, /* default foreground colour */
 	CurrentColorScheme.Primary.Background, /* default background colour */
 };
-
 
 /*
  * Default colors (colorname index)
